@@ -9,13 +9,19 @@ class BookmarkApp extends React.Component {
       bookmarks: ['hello kitty', 'sailor moon']
     };
   }
+
+  addBookmark(name) {
+    console.log("handler called");
+    this.state.bookmarks.push(name);
+    this.setState({ bookmarks: this.state.bookmarks });
+  }
   
   render() {
     return (
       <div>
       <h1> This is the Bookmark App </h1>
       <InfoPanel numBookmarks={this.state.bookmarks.length} />
-      <EntryPanel />
+      <EntryPanel addHandler={this.addBookmark.bind(this)} />
       </div>
     );
   }
