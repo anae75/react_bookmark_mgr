@@ -25,13 +25,20 @@ class BookmarkApp extends React.Component {
     this.setState({ bookmarks: this.state.bookmarks });
   }
 
+  deleteBookmark(idx) {
+    console.log("BookmarkApp delete " + idx);
+    var items = this.state.bookmarks;
+    items.splice(idx, 1);
+    this.setState({bookmarks: items});
+  }
+
   render() {
     return (
       <div>
       <h1> This is the Bookmark App </h1>
       <InfoPanel numBookmarks={this.state.bookmarks.length} />
       <EntryPanel addHandler={this.addBookmark.bind(this)} />
-      <BookmarkList bookmarks={this.state.bookmarks} />
+      <BookmarkList bookmarks={this.state.bookmarks} deleteHandler={this.deleteBookmark.bind(this)} />
       </div>
     );
   }
