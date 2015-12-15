@@ -1,6 +1,7 @@
 import React from 'react';
 var InfoPanel = require('./InfoPanel');
 var EntryPanel = require('./EntryPanel');
+var BookmarkList = require('./BookmarkList');
 
 class BookmarkApp extends React.Component {
   constructor(props) {
@@ -15,13 +16,14 @@ class BookmarkApp extends React.Component {
     this.state.bookmarks.push(name);
     this.setState({ bookmarks: this.state.bookmarks });
   }
-  
+
   render() {
     return (
       <div>
       <h1> This is the Bookmark App </h1>
       <InfoPanel numBookmarks={this.state.bookmarks.length} />
       <EntryPanel addHandler={this.addBookmark.bind(this)} />
+      <BookmarkList bookmarks={this.state.bookmarks} />
       </div>
     );
   }
