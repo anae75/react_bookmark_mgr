@@ -1,6 +1,9 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+var BookmarkApp = require('./BookmarkApp');
+
 ReactDOM.render(
-  <h1> hello from react </h1>,
+  <BookmarkApp />,
   document.getElementById('react')
 );

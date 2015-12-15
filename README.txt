@@ -20,3 +20,4 @@ npm install
 # add public/script.js
 # add webpack.config.js
 
+# add a react component in public/app.js
