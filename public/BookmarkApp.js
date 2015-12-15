@@ -1,5 +1,6 @@
 import React from 'react';
 var InfoPanel = require('./InfoPanel');
+var EntryPanel = require('./EntryPanel');
 
 class BookmarkApp extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class BookmarkApp extends React.Component {
       <div>
       <h1> This is the Bookmark App </h1>
       <InfoPanel numBookmarks={this.state.bookmarks.length} />
+      <EntryPanel />
       </div>
     );
   }
