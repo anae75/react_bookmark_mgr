@@ -7,13 +7,21 @@ class BookmarkApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      bookmarks: ['hello kitty', 'sailor moon']
+      bookmarks: []
     };
+    this.curIndex = 0;
+  }
+
+  nextIndex() {
+    var i = this.curIndex;
+    this.curIndex = this.curIndex + 1;
+    return i;
   }
 
   addBookmark(name) {
     console.log("handler called");
-    this.state.bookmarks.push(name);
+    var item = { name: name, id: this.nextIndex() };
+    this.state.bookmarks.push(item);
     this.setState({ bookmarks: this.state.bookmarks });
   }
 

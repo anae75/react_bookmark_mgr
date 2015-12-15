@@ -3,7 +3,13 @@ import React from 'react';
 let BookmarkList = React.createClass({
   listContent() {
     return( this.props.bookmarks.map( 
-      (name, i) => <li>{name}</li>
+      function (data, i) {
+        return( 
+          <li key={data.id}>
+          <button>delete</button> {data.name} {data.id}
+          </li>
+        );
+      }
     ));
   },
 
